@@ -1,0 +1,65 @@
+:root {
+  --size-board: 300px;
+  --size-pixel: 30px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  width: var(--size-board); 
+  height: var(--size-board);
+  background-color: #21394e;
+  position: relative;
+  border: .5px solid #000;
+}
+
+.pixel-snake {
+  /* background-color: #82FF9E; */
+}
+
+.pixel-snake__head {
+  content: url('/images/headSnake.png');
+}
+
+.pixel-snake__body {
+  content: url('/images/bodySnake.svg');
+}
+
+.pixel-snake--left {
+  transform: rotate(180deg);
+}
+
+.pixel-snake--right {
+  transform: rotate(0deg);
+}
+
+.pixel-snake--up {
+  transform: rotate(-90deg);
+}
+
+.pixel-snake--down {
+  transform: rotate(90deg);
+}
+
+.point-power {
+  position: relative;
+}
+
+.point-power::after {
+  margin: auto;
+  border-radius: 50%;
+  content: '';
+  width: calc(var(--size-pixel) - 5px);
+  height: calc(var(--size-pixel) - 5px);
+  background-color: #FF003D;
+  position: absolute;
+  
+  /* Mitad del espcio sobrante en cada celda, puesto que el tamaño del after en -5px, la mitad es 2.5px para poder centrarlo */
+  top: 2.5px; 
+  left: 2.5px; 
+}
